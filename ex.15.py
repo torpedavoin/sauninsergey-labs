@@ -1,17 +1,21 @@
-"""15. Дано змінні A, B, C. Змінити їх значення, перемістивши вміст A в B, B - в C, C - в A, і вивести
-нові значення змінних A, B, C."""
+"""15. Дано координати (x; y) точки і радіус кола (r). Визначити чи належить дана точка колі, якщо його
+центр знаходиться на початку координат."""
 
 
-def main(a: float, b: float, c: float):
-    """The function of switching A>B,B>C,C>A"""
-    a, b, c = b, c, a
-    return f'New A = {a}\nNew B = {b}\nNew C = {c}'
+import math
 
 
-if __name__ == '__main__' :
-    _a = input("Enter A ")
-    _b = input("Enter B ")
-    _c = input("Enter C ")
-    result = main(_a, _b, _c)
+def main(x: float, y: float ,r: float):
+    h = math.sqrt(x ** 2 + y ** 2)
+    if h <= r:
+        return f'Належить колу'
+    else:
+        return f'Не належить колу'
+
+
+if __name__ == '__main__':
+    _x = float(input("Введіть X "))
+    _y = float(input("Введіть Y "))
+    _r = float(input("Введіть R "))
+    result = main(_x, _y, _r)
     print(result)
-
